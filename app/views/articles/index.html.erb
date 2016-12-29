@@ -1,5 +1,6 @@
 <h1 align="center">List of articles</h1>
 
+<% if @articles.count > 0 %>
 <div align="center">
     <%= will_paginate %>
 </div>
@@ -7,3 +8,9 @@
 <div align="center">
     <%= will_paginate %>
 </div>
+<% else %>
+<div align="center">
+    <h3>Hey Fuccboi, no articles to show</h3>
+    <img src="http://i.imgur.com/PG846gh.png" alt="">
+</div>
+<% end %>
