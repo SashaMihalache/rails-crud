@@ -17,7 +17,7 @@
                             <%= pluralize(user.articles.count, "article") if user.articles %>
                         </small>
                     </li>
-                    <% if logged_in? and current_user.admin? %>
+                    <% if logged_in? and current_user.admin? and current_user != user %>
                         <li>
                             <%= link_to "Delete User", 
                                 user_path(user), 
