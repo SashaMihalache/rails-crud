@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         if @user.save
             session[:user_id] = @user.id
             flash[:success] = "Welcome to Jojo\'s blog, #{@user.username}"
-            redirect_to user_path(@user)
+            redirect_to root_path
         else
             render 'new'
         end
@@ -34,6 +34,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        puts @user
         @user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
     end
 
